@@ -1,0 +1,67 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SIMILE Widgets | Runway</title>
+    <link rel="stylesheet" href="styles/common.css" />
+
+    <!-- You need this, but replace the URL here with http://api.simile-widgets.org/runway/1.0/runway-api.js -->
+    <script type="text/javascript" src="api/runway-api.js"></script>
+    
+    <!-- These 2 files are specific to this demo. -->
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    
+    <script type="text/javascript">
+        var widget;
+
+        function onLoad() {
+            widget = Runway.createOrShowInstaller(
+                document.getElementById("the-widget"),
+                {
+                    // examples of initial settings
+                    // slideSize: 200,
+                    // backgroundColorTop: "#fff",
+                    
+                    // event handlers
+                    onReady: function() {
+                        widget.setRecords(records);
+                        widget.select(7);
+                        
+                        // Thes next 2 lines are specific for this demo. 
+                        // You don't really need them for your own page.
+                        document.getElementById("right-column").style.display = "block";
+                        generateSettingPanel(); 
+                    },
+                    onSelect: function(index, id) {
+                        // This is how you get notified when a different image has been selected in the widget.
+                        var record = records[index];
+                        document.getElementById("selected-slide").innerHTML = record.title;
+                    }
+                }
+            );
+            
+            // This is specific to this demo.
+            if (widget == null) {
+                document.getElementById("the-widget").appendChild(
+                    document.getElementById("preview").cloneNode(true));
+            }
+        }
+    </script>
+  </head>
+  <body onload="onLoad();">
+    <ul id="path">
+        <li><a href="/" title="Home">SIMILE Widgets</a></li>
+        <li><span>Runway</span></li>
+    </ul>
+    <div id="header">
+      <h1>Runway</h1>
+    </div>
+    
+    <!-- This element is all you really need. -->
+    <div id="the-widget" style="height: 400px;"></div>
+    
+  </body>
+</html>

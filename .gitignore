@@ -1,0 +1,23 @@
+# Ignore Emacs backup files
+*~
+\#*\#
+.\#*
+
+# Ignore CGI files
+*.cgi
+
+# Ignore PHP files
+*.php
+
+# Ignore redundant favicon files
+html/android-icon-*
+html/apple-icon-*
+!html/apple-icon-180x180.png
+html/apple-icon.png
+html/apple-icon-precomposed.png
+html/favicon-16x16.png
+html/favicon-96x96.png
+html/browserconfig.xml
+html/manifest.json
+html/ms-icon-*
+html/favicons.zip
