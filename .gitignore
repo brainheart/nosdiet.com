@@ -22,5 +22,5 @@ html/manifest.json
 html/ms-icon-*
 html/favicons.zip
 
-# Ingore logs
+# Ignore logs
 *.log
