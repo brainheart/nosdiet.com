@@ -4,3 +4,5 @@ Disallow:   /lumberjack.html
 User-Agent: sitecheck.internetseer.com
 User-agent: grub
 Disallow: /
+
+Sitemap: https://nosdiet.com/sitemap.xml
