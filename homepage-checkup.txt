@@ -1,0 +1,422 @@
+NO S DIET HOME PAGE CHECKUP
+Checked October 1, 2026 (America/New_York)
+Scope: index.html only; outgoing links and referenced local files. No publication performed.
+
+Cleanup made:
+- Removed unused fb-root and fb-like-box containers. No Facebook SDK loads them.
+- Removed an orphan YouTube banner comment.
+- Removed a newline inside the Kindle href.
+- Added the optional closing paragraph tag after the international bookstores.
+- Left visible wording, CSS, images, link destinations and affiliate identifiers unchanged.
+
+Verification:
+- Working copy matched the live home page before edits.
+- HTML5 parsing produced zero errors before and after cleanup.
+- Full-page Chrome screenshots before/after were byte-identical at 1200px and 390px widths.
+- All measured element geometry and page heights matched at both widths.
+- All referenced local assets and linked local files exist. All same-page anchors resolve.
+- No broken images in either browser viewport. git diff --check passed.
+- No AdSense, Google Analytics, Facebook SDK or other external script is present.
+- The only script writes the copyright year and remains functional.
+
+Issues needing attention:
+- Dead commercial destinations: Penguin publisher, Palm and Sony eBook stores, all five unique CafePress shop/product links, and Amazon buy-anything affiliate link.
+- Dead reference destinations: USDA sugar statistics, WebMD snack statistics, both Yahoo Finance charts, Harvard Magazine, MSN/Forbes, and Dan McVicker.
+- Harvard School of Public Health press-release link lands on the home page; the original citation is lost.
+- USDA nutrient-search CGI URL times out over HTTP and returns 404 over HTTPS.
+- Old FDA weight-loss URL timed out. Washington Post article could not be retrieved (HTTP timeout, HTTPS HTTP/2 error).
+- Forum links encounter Cloudflare challenges; this is not evidence that the topics are missing.
+- Barnes & Noble legacy hostname failed HTTPS certificate validation; verify/update its destination.
+- CDC, FDA PDF and Nature/Wiley destinations blocked automated access. Nature redirects to a journal home rather than the cited paper.
+- Several Amazon/PubMed responses have generic titles; HTTP success alone does not confirm the intended content or affiliate attribution.
+- Many links use HTTP. No mixed-content asset loads were found; these are navigation links.
+- Copy contains dated New labels, Palm/Sony device recommendations and the claim that the page changes frequently.
+- Typographical examples: pyschological, millenia, and the featherwieght anchor (keep historical anchors for compatibility).
+- Medical/statistical claims have not been fact-checked; several cited sources are from 2001 or earlier.
+
+Link inventory (unique external href values; redirects followed; GET requests):
+
+RESPONDED: HTTP 200; title: Everyday Systems: Systematic Moderation for sustainable good habits
+Source: index.html lines 44, 1715
+URL: https://everydaysystems.com
+Final: https://everydaysystems.com/
+
+RESPONDED: HTTP 200; title: No S Diet
+Source: index.html lines 48
+URL: https://facebook.com/nosdiet
+Final: https://www.facebook.com/nosdiet
+
+RESPONDED: HTTP 200; title: No-S Diet (Group)
+Source: index.html lines 48
+URL: https://facebook.com/groups/nosdiet
+Final: https://www.facebook.com/groups/nosdiet
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 56, 1130, 1359, 1708
+URL: https://bb.everydaysystems.com/viewforum.php?f=3
+Final: https://bb.everydaysystems.com/viewforum.php?f=3
+
+RESPONDED: HTTP 200; title: Everyday Systems Podcast
+Source: index.html lines 60
+URL: https://podcast.everydaysystems.com/
+Final: https://podcast.everydaysystems.com/
+
+RESPONDED: HTTP 200; title: Everyday Systems: HabitCal Habit Tracker
+Source: index.html lines 62, 1178, 1181, 1186, 1410
+URL: https://habitcal.everydaysystems.com/
+Final: https://habitcal.everydaysystems.com/
+
+UNVERIFIED CONTENT: successful response but generic title/challenge; product/article not confirmed
+Source: index.html lines 64, 107, 109, 114, 1546
+URL: https://www.amazon.com/exec/obidos/ASIN/0399534040/everydaysyste-20
+Final: https://www.amazon.com/exec/obidos/ASIN/0399534040/everydaysyste-20
+
+RESPONDED: HTTP 200; title: Everyday Systems: Systematic Moderation for sustainable good habits
+Source: index.html lines 69
+URL: https://everydaysystems.com/
+Final: https://everydaysystems.com/
+
+BROKEN: hostname does not resolve
+Source: index.html lines 114, 118
+URL: http://us.penguingroup.com/nf/Book/BookDisplay/0,,9780399534041,00.html
+Final: http://us.penguingroup.com/nf/Book/BookDisplay/0,,9780399534041,00.html
+
+UNVERIFIED: HTTP 403; HTTPS hostname has certificate mismatch
+Source: index.html lines 116
+URL: http://search.barnesandnoble.com/The-No-S-Diet/Reinhard-Engels/e/9780399534041/?itm=2
+Final: http://search.barnesandnoble.com/The-No-S-Diet/Reinhard-Engels/e/9780399534041/?itm=2
+
+RESPONDED: HTTP 200; title: The No S Diet: The Strikingly Simple Weight-Loss Strategy That Has Dieters Raving-and DroppingPounds: No Snacks, No Sweets, No Seconds, Except on Days That Start with S: Amazon.co.uk: Engels, Reinhard, Kallen, Ben: 9780399534041: Books
+Source: index.html lines 120
+URL: http://www.amazon.co.uk/NO-DIET-Snacks-Sweets-Seconds/dp/0399534040/
+Final: https://www.amazon.co.uk/NO-DIET-Snacks-Sweets-Seconds/dp/0399534040/
+
+RESPONDED: HTTP 200; title: The No S Diet: The Strikingly Simple Weight-Loss Strategy That Has Dieters Raving-and DroppingPounds : Engels, Reinhard, Kallen, Ben: Amazon.de: Bücher
+Source: index.html lines 120
+URL: http://www.amazon.de/No-Diet-Strikingly-Weight-Loss-Raving/dp/0399534040/
+Final: https://www.amazon.de/No-Diet-Strikingly-Weight-Loss-Raving/dp/0399534040/
+
+UNVERIFIED CONTENT: successful response but generic title/challenge; product/article not confirmed
+Source: index.html lines 120
+URL: http://www.amazon.ca/No-S-Diet-Reinhard-Engels/dp/0399534040/
+Final: https://www.amazon.ca/No-S-Diet-Reinhard-Engels/dp/0399534040/
+
+RESPONDED: HTTP 200; title: No S Diet | Angus & Robertson
+Source: index.html lines 120
+URL: http://www.angusrobertson.com.au/book/no-s-diet-no-snacks-no-sweets-no-seconds-except-on-days-that-start-with-s/1448814/
+Final: https://www.angusrobertson.com.au/books/no-s-diet-reinhard-engels-ben-kallen/p/9780399534041
+
+RESPONDED: HTTP 200; title: Amazon | The No S Diet: The Strikingly Simple Weight-Loss Strategy That Has Dieters Raving-and DroppingPounds | Engels, Reinhard, Kallen, Ben | Green Housecleaning
+Source: index.html lines 120
+URL: http://www.amazon.co.jp/No-Diet-Snacks-Sweets-Seconds/dp/0399534040/ref=sr_1_1?ie=UTF8&s=english-books&qid=1213195470&sr=8-1
+Final: https://www.amazon.co.jp/No-Diet-Snacks-Sweets-Seconds/dp/0399534040/ref=sr_1_1?ie=UTF8&s=english-books&qid=1213195470&sr=8-1
+
+UNVERIFIED CONTENT: successful response but generic title/challenge; product/article not confirmed
+Source: index.html lines 122
+URL: https://www.amazon.com/exec/obidos/ASIN/B0013TRRWG/everydaysyste-20
+Final: https://www.amazon.com/exec/obidos/ASIN/B0013TRRWG/everydaysyste-20
+
+BROKEN: hostname does not resolve
+Source: index.html lines 122
+URL: http://ebooks.palm.com/palm/eBooks/eBook69251.htm?
+Final: http://ebooks.palm.com/palm/eBooks/eBook69251.htm
+
+BROKEN: hostname does not resolve
+Source: index.html lines 122
+URL: http://ebookstore.sony.com/product/400/000/000/000/000/085/878/400000000000000085878.html
+Final: http://ebookstore.sony.com/product/400/000/000/000/000/085/878/400000000000000085878.html
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 124
+URL: https://bb.everydaysystems.com/viewtopic.php?t=4015
+Final: https://bb.everydaysystems.com/viewtopic.php?t=4015
+
+RESPONDED: HTTP 200; title: CNN.com - Health - Heart Association to warn against low-carb diets - March 20, 2001
+Source: index.html lines 157
+URL: http://www.cnn.com/2001/HEALTH/diet.fitness/03/20/protein.diet.heart/
+Final: https://www.cnn.com/2001/HEALTH/diet.fitness/03/20/protein.diet.heart/
+
+UNVERIFIED: curl: (28) Connection timed out after 25007 milliseconds
+Source: index.html lines 186
+URL: http://vm.cfsan.fda.gov/~dms/wgtloss.html
+Final: http://vm.cfsan.fda.gov/~dms/wgtloss.html
+
+RESPONDED: HTTP 200; title: Everyday Systems - Bulletin Boards
+Source: index.html lines 233
+URL: https://bb.everydaysystems.com/
+Final: https://bb.everydaysystems.com/
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 278
+URL: https://bb.everydaysystems.com/viewtopic.php?t=759
+Final: https://bb.everydaysystems.com/viewtopic.php?t=759
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 291
+URL: https://bb.everydaysystems.com/viewtopic.php?t=2784
+Final: https://bb.everydaysystems.com/viewtopic.php?t=2784
+
+UNVERIFIED: HTTP 200 is a bot challenge
+Source: index.html lines 312
+URL: http://www.cspinet.org/liquidcandy/
+Final: https://www.cspi.org/liquidcandy/
+
+BROKEN: HTTP 404
+Source: index.html lines 329
+URL: http://www.ers.usda.gov/AmberWaves/April03/Indicators/behinddata.htm
+Final: https://www.ers.usda.gov/AmberWaves/April03/Indicators/behinddata.htm
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 343
+URL: http://www.fda.gov/OHRMS/DOCKETS/DOCKETS/03n0338/03n-0338-c000014-01-vol7.pdf
+Final: http://www.fda.gov/OHRMS/DOCKETS/DOCKETS/03n0338/03n-0338-c000014-01-vol7.pdf
+
+RESPONDED: HTTP 200; title: Why Have Americans Become More Obese
+Source: index.html lines 446
+URL: http://nrs.harvard.edu/urn-3:HUL.InstRepos:2640583
+Final: https://dash.harvard.edu/entities/publication/73120378-7f68-6bd4-e053-0100007fdf3b
+
+BROKEN: HTTP 404
+Source: index.html lines 456
+URL: http://www.webmd.com/content/pages/10/1671_51408
+Final: https://www.webmd.com/content/pages/10/1671_51408
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 458
+URL: http://www.nature.com/oby/journal/v11/n8/abs/oby2003132a.html
+Final: https://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1930-739X
+
+RESPONDED: HTTP 200; title: Everyday Systems Podcast — Episode 28: A 90% diet solution -- in 2 words
+Source: index.html lines 478
+URL: https://podcast.everydaysystems.com/episode/28/
+Final: https://podcast.everydaysystems.com/episode/28/
+
+BROKEN: HTTP URL timed out; HTTPS equivalent returns 404
+Source: index.html lines 526
+URL: http://www.nal.usda.gov/fnic/cgi-bin/nut_search.pl
+Final: http://www.nal.usda.gov/fnic/cgi-bin/nut_search.pl
+
+RESPONDED: HTTP 200; title: Urban Ranger: build the habit of purposeful walking
+Source: index.html lines 555
+URL: https://urbanranger.com
+Final: https://urbanranger.com/
+
+RESPONDED: HTTP 200; title: Shovelglove: The Sledgehammer Workout
+Source: index.html lines 558, 1060
+URL: https://shovelglove.com/
+Final: https://shovelglove.com/
+
+RESPONDED: HTTP 200; title: Everyday Systems Podcast — Episode 31: What is the best piece of exercise equipment money can buy?
+Source: index.html lines 574
+URL: https://podcast.everydaysystems.com/episode/31/
+Final: https://podcast.everydaysystems.com/episode/31/
+
+RESPONDED: HTTP 200; title: Google Search
+Source: index.html lines 586
+URL: http://www.google.com/search?q=anorexic+role+models&ie=UTF-8&oe=UTF-8
+Final: http://www.google.com/search?q=anorexic+role+models&ie=UTF-8&oe=UTF-8
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 589
+URL: https://bb.everydaysystems.com/viewtopic.php?t=1921
+Final: https://bb.everydaysystems.com/viewtopic.php?t=1921
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 648
+URL: http://www.cdc.gov/nccdphp/dnpa/obesity/defining.htm
+Final: http://www.cdc.gov/nccdphp/dnpa/obesity/defining.htm
+
+UNVERIFIED CONTENT: successful response but generic title/challenge; product/article not confirmed
+Source: index.html lines 667
+URL: https://www.amazon.com/exec/obidos/tg/detail/-/0060792299/ref=ase_everydaysyste-20/102-4610536-4165714?v=glance&s=books
+Final: https://www.amazon.com/exec/obidos/tg/detail/-/0060792299/ref=ase_everydaysyste-20/102-4610536-4165714?v=glance&s=books
+
+BROKEN: HTTP 404
+Source: index.html lines 674
+URL: http://finance.yahoo.com/q/bc?s=MCD&t=my
+Final: https://finance.yahoo.com/q/bc?s=MCD&t=my
+
+BROKEN: HTTP 404
+Source: index.html lines 676
+URL: http://finance.yahoo.com/q/bc?s=KKD&t=5y
+Final: https://finance.yahoo.com/q/bc?s=KKD&t=5y
+
+UNVERIFIED CONTENT: successful response but generic title/challenge; product/article not confirmed
+Source: index.html lines 696
+URL: https://www.amazon.com/exec/obidos/ASIN/0060792299/everydaysyste-20/002-6564705-9371215?%5Fencoding=UTF8&camp=1789&link%5Fcode=xm2
+Final: https://www.amazon.com/exec/obidos/ASIN/0060792299/everydaysyste-20/002-6564705-9371215?%5Fencoding=UTF8&camp=1789&link%5Fcode=xm2
+
+UNVERIFIED CONTENT: successful response but generic title/challenge; product/article not confirmed
+Source: index.html lines 706
+URL: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=15809664&query_hl=1
+Final: https://pubmed.ncbi.nlm.nih.gov/15809664/?dopt=Abstract
+
+UNVERIFIED CONTENT: successful response but generic title/challenge; product/article not confirmed
+Source: index.html lines 722
+URL: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=12084369&dopt=Abstract
+Final: https://pubmed.ncbi.nlm.nih.gov/12084369/?dopt=Abstract
+
+BROKEN: HTTP 404
+Source: index.html lines 736
+URL: http://www.harvardmagazine.com/on-line/050465.html
+Final: https://www.harvardmagazine.com/on-line/050465-html
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 796
+URL: https://bb.everydaysystems.com/viewtopic.php?p=5779&highlight=#5779
+Final: https://bb.everydaysystems.com/viewtopic.php?p=5779&highlight=#5779
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 865
+URL: https://bb.everydaysystems.com/viewtopic.php?t=6287
+Final: https://bb.everydaysystems.com/viewtopic.php?t=6287
+
+RESPONDED: HTTP 200; title: Everyday Systems Podcast — Episode 13: Strictness
+Source: index.html lines 890
+URL: https://podcast.everydaysystems.com/episode/13/
+Final: https://podcast.everydaysystems.com/episode/13/
+
+RESPONDED: HTTP 200; title: Three Stooges - www.threestooges.com %
+Source: index.html lines 897, 999
+URL: http://www.threestooges.com/
+Final: http://threestooges.com/
+
+UNVERIFIED CONTENT: successful response but generic title/challenge; product/article not confirmed
+Source: index.html lines 913
+URL: https://www.amazon.com/exec/obidos/ASIN/0679422730/everydaysyste-20
+Final: https://www.amazon.com/exec/obidos/ASIN/0679422730/everydaysyste-20
+
+LOST DESTINATION: redirects to Harvard home page, not cited release
+Source: index.html lines 1013
+URL: http://www.hsph.harvard.edu/press/releases/press12101999.html
+Final: https://hsph.harvard.edu/
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1076
+URL: https://bb.everydaysystems.com/viewtopic.php?t=248
+Final: https://bb.everydaysystems.com/viewtopic.php?t=248
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1080
+URL: http://www.cdc.gov/nccdphp/dnpa/bmi/calc-bmi.htm
+Final: http://www.cdc.gov/nccdphp/dnpa/bmi/calc-bmi.htm
+
+RESPONDED: HTTP 200; title: Shovelglove: The Sledgehammer Workout
+Source: index.html lines 1090
+URL: https://shovelglove.com
+Final: https://shovelglove.com/
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1094
+URL: https://bb.everydaysystems.com/viewtopic.php?t=2729
+Final: https://bb.everydaysystems.com/viewtopic.php?t=2729
+
+RESPONDED: HTTP 200; title: Google Search
+Source: index.html lines 1112
+URL: http://www.google.com/search?q=%22no%20s%20diet%22&qt_s=Search&lr=&sa=N&tab=gw
+Final: http://www.google.com/search?q=%22no%20s%20diet%22&qt_s=Search&lr=&sa=N&tab=gw
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1115
+URL: https://bb.everydaysystems.com/viewtopic.php?t=2680
+Final: https://bb.everydaysystems.com/viewtopic.php?t=2680
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1117
+URL: https://bb.everydaysystems.com/viewtopic.php?t=2660
+Final: https://bb.everydaysystems.com/viewtopic.php?t=2660
+
+RESPONDED: HTTP 200; title: This column will change your life | Health & wellbeing | The Guardian
+Source: index.html lines 1124
+URL: http://www.guardian.co.uk/lifeandstyle/2007/sep/15/healthandwellbeing.features4
+Final: https://www.theguardian.com/lifeandstyle/2007/sep/15/healthandwellbeing.features4
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1139
+URL: https://bb.everydaysystems.com/viewforum.php?f=13
+Final: https://bb.everydaysystems.com/viewforum.php?f=13
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1144
+URL: https://bb.everydaysystems.com/viewtopic.php?t=3839
+Final: https://bb.everydaysystems.com/viewtopic.php?t=3839
+
+RESPONDED: HTTP 200; title: No S Diet
+Source: index.html lines 1150
+URL: https://www.facebook.com/nosdiet
+Final: https://www.facebook.com/nosdiet
+
+RESPONDED: HTTP 200; title: No-S Diet (Group)
+Source: index.html lines 1151
+URL: https://www.facebook.com/groups/nosdiet
+Final: https://www.facebook.com/groups/nosdiet
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1171
+URL: https://bb.everydaysystems.com/viewforum.php?f=8
+Final: https://bb.everydaysystems.com/viewforum.php?f=8
+
+BROKEN: CafePress error page despite HTTP 200
+Source: index.html lines 1195, 1540, 1574, 1575, 1609
+URL: http://www.cafepress.com/everydaysystems.14636844
+Final: https://www.cafepress.com/everydaysystems.14636844
+
+UNVERIFIED: curl: (28) Operation timed out after 25011 milliseconds with 0 bytes received
+Source: index.html lines 1284
+URL: http://www.washingtonpost.com/ac2/wp-dyn?pagename=article&contentId=A10995-2002Jan7&notFound=true
+Final: http://www.washingtonpost.com/ac2/wp-dyn?pagename=article&contentId=A10995-2002Jan7&notFound=true
+
+BROKEN: hostname does not resolve
+Source: index.html lines 1315
+URL: http://www.danmcvicker.com
+Final: http://www.danmcvicker.com/
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1367
+URL: https://bb.everydaysystems.com/ucp.php?mode=register
+Final: https://bb.everydaysystems.com/ucp.php?mode=register
+
+RESPONDED: HTTP 200; title: Everyday Systems Podcast — Episode 21: Extreme Moderation
+Source: index.html lines 1369
+URL: https://podcast.everydaysystems.com/episode/21/
+Final: https://podcast.everydaysystems.com/episode/21/
+
+BROKEN: HTTP 400
+Source: index.html lines 1486
+URL: http://moneycentral.msn.com/content/invest/forbes/P114424.asp
+Final: https://www.msn.com/content/invest/forbes/P114424.asp
+
+BROKEN: HTTP 404
+Source: index.html lines 1528
+URL: https://www.amazon.com/exec/obidos/redirect-home/everydaysyste-20
+Final: https://www.amazon.com/exec/obidos/redirect-home/everydaysyste-20
+
+BROKEN: CafePress error page despite HTTP 200
+Source: index.html lines 1538, 1565
+URL: http://www.cafepress.com/everydaysystems
+Final: https://www.cafepress.com/everydaysystems
+
+UNVERIFIED: HTTP 403 (forum pages show Cloudflare challenge)
+Source: index.html lines 1551
+URL: https://bb.everydaysystems.com/viewtopic.php?t=2662
+Final: https://bb.everydaysystems.com/viewtopic.php?t=2662
+
+BROKEN: CafePress error page despite HTTP 200
+Source: index.html lines 1581, 1582
+URL: http://www.cafepress.com/everydaysystems.14636517
+Final: https://www.cafepress.com/everydaysystems.14636517
+
+BROKEN: CafePress error page despite HTTP 200
+Source: index.html lines 1588, 1589
+URL: http://www.cafepress.com/everydaysystems.14636838
+Final: https://www.cafepress.com/everydaysystems.14636838
+
+BROKEN: CafePress error page despite HTTP 200
+Source: index.html lines 1594, 1595
+URL: http://www.cafepress.com/everydaysystems.398670702
+Final: https://www.cafepress.com/everydaysystems.398670702
+
+RESPONDED: HTTP 200; title: Do you have to use the circle-R registered trademark symbol more than once on product packaging? - Answers
+Source: index.html lines 1642
+URL: http://wiki.answers.com/Q/Do_you_have_to_use_the_circle-R_registered_trademark_symbol_more_than_once_on_product_packaging
+Final: https://www.answers.com/law-and-legal-issues/Do_you_have_to_use_the_circle-R_registered_trademark_symbol_more_than_once_on_product_packaging
