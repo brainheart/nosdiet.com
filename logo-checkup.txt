@@ -1,0 +1,35 @@
+NO S DIET GREEN LOGO CHECKUP
+October 7, 2026 (UTC)
+
+Request: Make the No S Diet logo a green slashed circle instead of red and
+push to GitHub/Pages, working in the existing Everyday Systems project.
+Checkout: /Users/klaus/Projects/eds/nosdiet.com on klausheim.
+
+Changed: index.html, the homepage logo's inline style only. Added
+filter:hue-rotate(120deg), producing a dark green circle and slash while
+preserving the original GIF, black S, white background, shape and 120x100 size.
+No shared green design token exists in this static site. Other sites, favicons,
+merchandise images and page colors were outside the change.
+
+Checks: clean initial checkout; remote main matched local HEAD; git diff
+--check passed. No repository test/build scripts or project .agents/skills
+exist. Headless Chromium checked the HTTP-served local and live pages at
+1200px and 390px widths: all images loaded, logo bounds were unchanged,
+and all 3,697 changed screenshot pixels stayed inside the logo bounds.
+Rendered desktop/mobile logo screenshots were inspected. GitHub's existing
+pages build and deployment workflow completed successfully.
+
+Logo commit: 4a6f9740d01efcae9866649eaaea3be8b8d4e191
+Remote main was verified against that exact commit after push.
+Deployment: https://github.com/brainheart/nosdiet.com/actions/runs/37615037730
+Live URL verified: https://nosdiet.com/
+Files changed for this request: index.html and this work note.
+
+History: this note follows the existing homepage-checkup.txt convention.
+Desktop project discovery failed with DesktopProjectsUnavailableError, so
+this task could not be attached to the existing Codex desktop project via
+projectId. Git commits and this project-local note preserve the work history.
+No Codex internal history, settings or local memories were changed.
+Preview limitation: Codex's open_in_codex panel tool was unavailable; local
+HTTP and live-site checks used an isolated headless browser, not a forwarded
+Codex panel. No simultaneous GUI control was used.
